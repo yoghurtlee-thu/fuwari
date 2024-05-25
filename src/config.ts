@@ -56,7 +56,7 @@ export const profileConfig: ProfileConfig = {
         },
         {
             name: "Email",
-            icon: "fa6-brands:steam",
+            icon: "fa6-solid:envelope",
             url: "mailto:yoghurtlee123@gmail.com",
         },
         {
