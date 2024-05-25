@@ -11,6 +11,7 @@ import License from "@components/misc/License.astro";
 import {licenseConfig} from "src/config";
 import Markdown from "@components/misc/Markdown.astro";
 import path from "path";
+import Comment from "@components/comment/index.astro";
 import {profileConfig} from "../../config";
 import {formatDateToYYYYMMDD} from "../../utils/date-utils";
 
@@ -90,7 +91,7 @@ const jsonLd = {
                 ></PostMetadata>
                 {!entry.data.image && <div class="border-[var(--line-divider)] border-dashed border-b-[1px] mb-5"></div>}
             </div>
-
+            
             <!-- always show cover as long as it has one -->
 
             {entry.data.image &&
@@ -106,7 +107,7 @@ const jsonLd = {
 
         </div>
     </div>
-
+    <Comment post={entry}></Comment>
     <div class="flex flex-col md:flex-row justify-between mb-4 gap-4 overflow-hidden w-full">
         <a href={getPostUrlBySlug(entry.data.nextSlug)} class="w-full font-bold overflow-hidden active:scale-95">
             {entry.data.nextSlug && <div class="btn-card rounded-2xl w-full h-[3.75rem] max-w-full px-4 flex items-center justify-start gap-4" >
